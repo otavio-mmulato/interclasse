@@ -4,54 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <title>Meu Projeto Tailwind</title>
+  <title>Interclasses SENAI</title>
   <link href="../dist/output.css" rel="stylesheet">
-  <script src="menu.js" defer></script>
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/png" href="img/icone.png" sizes="180x180"/>
 </head>
 
 <body class="flex flex-col min-h-screen bg-azul">
-  
+
   <header class="w-full shadow-md sticky top-0 z-40">
-    <nav class="bg-amarelo flex items-center justify-between px-6 py-2 relative">
+    <nav class="bg-amarelo flex items-center justify-between px-4 md:px-6 py-2 relative">
       <a href="#">
         <img src="img/logo.png" alt="Logo SENAI SP" class="h-10 w-auto">
       </a>
-      <div class="hidden md:flex items-center gap-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <a href="#" class="text-black font-semibold hover:text-laranja transition-colors">Modalidades</a>
-        <a href="#" class="text-black font-semibold hover:text-laranja transition-colors">AAPM</a>
-        <a href="#" class="text-black font-semibold hover:text-laranja transition-colors">Inscrições</a>
+      
+      <div class="flex items-center gap-x-4 md:gap-x-8 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+        <a href="#" class="text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors">Modalidades</a>
+        <a href="#" class="text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors">AAPM</a>
+        <a href="#" class="text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors">Inscrições</a>
       </div>
-      <button id="hamburger-btn" class="md:hidden text-2xl text-black">
-        <i class="fa-solid fa-bars"></i>
-      </button>
     </nav>
     <div class="bg-laranja h-4 w-full"></div>
   </header>
   <main class="flex-grow">
-    
-    </main>
+    <section class="py-12 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white"><span class="text-vermelho">INTERCLASSES</span> SENAI</h1>
+        <p class="text-lg text-laranja font-semibold mt-2">12/08 a 16/08</p>
+        
+        <div class="max-w-4xl mx-auto">
+            <p class="text-white mt-6 leading-relaxed text-justify">
+                Chegou o momento mais esperado pelos atletas do SENAI: o Interclasses! O evento, onde a rivalidade fica só em quadra, a torcida vibra a cada ponto e a diversão é mais que garantida, só é possível graças ao apoio incansável da AAPM do SENAI Gaspar Ricardo Jr., Santa Rosália, Sorocaba. Preparem-se para as competições mais acirradas e venham fazer parte dessa grande festa do esporte, um sonho que se realiza a cada ano!
+            </p>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-white mt-16 mb-8">Modalidades</h2>
+
+        <div class="max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div data-modalidade="futsal" class="modalidade-card bg-creme rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="img/futsal.png" alt="Modalidade Futsal" class="w-full h-48 object-cover">
+            </div>
+            <div data-modalidade="volei" class="modalidade-card bg-creme rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="img/volei.png" alt="Modalidade Vôlei" class="w-full h-48 object-cover">
+            </div>
+            <div data-modalidade="tenis-de-mesa" class="modalidade-card bg-creme rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="img/tenis_de_mesa.png" alt="Modalidade Tênis de Mesa" class="w-full h-48 object-cover">
+            </div>
+        </div>
+
+        <div id="modalidade-descricao" class="hidden max-w-4xl mx-auto mt-8 bg-creme text-gray-800 p-6 rounded-lg shadow-lg text-left">
+            </div>
+    </section>
+  </main>
   <footer class="bg-amarelo text-gray-800 border-t-8 border-azul">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center text-center p-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center text-center p-6">
       <div class="flex justify-center">
         <img src="img/logo.png" alt="Logo SENAI SP" class="h-12">
       </div>
       <div class="flex flex-col items-center gap-y-4">
         <div class="flex gap-x-6">
-          <a href="https://www.facebook.com/aapmsenaisorocaba/" target="_blank" class="text-3xl hover:text-azul transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/aapmsenaisorocaba/" target="_blank" class="text-3xl hover:text-azul transition-colors"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://wa.me/551532127410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20interclasses!" target="_blank" class="text-3xl hover:text-azul transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/aapmsenaisorocaba/" target="_blank" class="text-2xl hover:text-azul transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/aapmsenaisorocaba/" target="_blank" class="text-2xl hover:text-azul transition-colors"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/551532127410?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20interclasses!" target="_blank" class="text-2xl hover:text-azul transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
         <p class="text-sm font-medium">Praça Roberto Mange, R. Santa Rosália, 30, Sorocaba - SP, 18090-110</p>
         <p class="text-xs">Copyright © 2025 Ophidiana - Todos os direitos reservados.</p>
         <a href="https://github.com/otavio-mmulato" target="_blank"><img src="img/ophidiana.png" alt="Selo de Segurança Ophidiana" class="h-10 mt-2"></a>
       </div>
       <div class="flex justify-center">
-        <img src="img/aapm.png" alt="Logo AAPM" class="h-20">
+        <img src="img/aapm.png" alt="Logo AAPM" class="h-16">
       </div>
     </div>
   </footer>
-  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 max-w-sm bg-creme shadow-xl transform transition-transform duration-300 ease-in-out translate-x-full z-50">
-      </div>
-
-</body>
+  </body>
 </html>
