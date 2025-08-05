@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: jomhuria;
+  src: url('https://fonts.googleapis.com/css2?family=Jomhuria&display=swap');
+}
+
 
 .aapm-carousel {
   /* Setas*/

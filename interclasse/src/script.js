@@ -3,16 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
         futsal: `
             <div class="bg-creme text-gray-800 p-6 rounded-lg shadow-lg">
                 <h3 class="text-2xl font-bold text-azul mb-3">Futsal</h3>
-                <p class="leading-relaxed text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a leo eget nunc interdum imperdiet. Suspendisse vulputate est eget est commodo, non imperdiet velit laoreet. Donec elementum gravida ipsum, quis rhoncus sem dictum a. Nulla auctor massa purus, non pharetra erat suscipit non. Duis vitae erat eget nibh tempor luctus quis sed ligula. Integer suscipit, mi eget blandit sodales, diam lacus elementum lorem, sit amet finibus tellus odio a metus. Mauris quis lectus metus. Donec ut arcu eget mauris interdum lobortis. Pellentesque eget vehicula orci, quis bibendum est. Vestibulum viverra tortor a nisi ullamcorper tristique. Aenean odio mauris, auctor quis suscipit ut, egestas eu augue.</p>
+                <p class="leading-relaxed text-justify">O futsal é uma modalidade de esporte derivada do futebol, mas que é praticada em uma quadra de cimento ou de madeira, com cinco jogadores em cada time e em dois tempos de 20 minutos, as equipes têm o objetivo de marcar gols na baliza dos oponentes.</p>
             </div>
         `,
         volei: `<div class="bg-creme text-gray-800 p-6 rounded-lg shadow-lg">
                 <h3 class="text-2xl font-bold text-azul mb-3">Vôlei</h3>
-                <p class="leading-relaxed text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a leo eget nunc interdum imperdiet. Suspendisse vulputate est eget est commodo, non imperdiet velit laoreet. Donec elementum gravida ipsum, quis rhoncus sem dictum a. Nulla auctor massa purus, non pharetra erat suscipit non. Duis vitae erat eget nibh tempor luctus quis sed ligula. Integer suscipit, mi eget blandit sodales, diam lacus elementum lorem, sit amet finibus tellus odio a metus. Mauris quis lectus metus. Donec ut arcu eget mauris interdum lobortis. Pellentesque eget vehicula orci, quis bibendum est. Vestibulum viverra tortor a nisi ullamcorper tristique. Aenean odio mauris, auctor quis suscipit ut, egestas eu augue.</p>
+                <p class="leading-relaxed text-justify">O voleibol é um esporte dinâmico e estratégico, jogado entre duas equipes, com uma bola e com as mãos, em uma quadra dividida por uma rede. O objetivo principal é lançar a bola por cima da rede e fazê-la tocar no chão do adversário, enquanto a equipe oposta tenta impedir esse movimento.</p>
             </div>`,
         'tenis-de-mesa': `<div class="bg-creme text-gray-800 p-6 rounded-lg shadow-lg">
                 <h3 class="text-2xl font-bold text-azul mb-3">Tênis de mesa</h3>
-                <p class="leading-relaxed text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a leo eget nunc interdum imperdiet. Suspendisse vulputate est eget est commodo, non imperdiet velit laoreet. Donec elementum gravida ipsum, quis rhoncus sem dictum a. Nulla auctor massa purus, non pharetra erat suscipit non. Duis vitae erat eget nibh tempor luctus quis sed ligula. Integer suscipit, mi eget blandit sodales, diam lacus elementum lorem, sit amet finibus tellus odio a metus. Mauris quis lectus metus. Donec ut arcu eget mauris interdum lobortis. Pellentesque eget vehicula orci, quis bibendum est. Vestibulum viverra tortor a nisi ullamcorper tristique. Aenean odio mauris, auctor quis suscipit ut, egestas eu augue.</p>
+                <p class="leading-relaxed text-justify">O tênis de mesa, também conhecido como pingue-pongue, é o jogo em que duas pessoas ou duplas usam raquetes de madeira para passar uma bolinha de um lado a outro de uma rede instalada em uma mesa. O nome pingue-pongue deve-se ao barulho que a bola faz ao bater na raquete e na mesa.</p>
             </div>`
     };
     const cards = document.querySelectorAll('.modalidade-card');
@@ -113,12 +113,12 @@ const sections = document.querySelectorAll('main section[id]');
                 const id = entry.target.id;
                 
                 navLinks.forEach(link => {
-                    link.classList.remove('text-laranja', 'underline');
+                    link.classList.remove('text-amarelopan');
                 });
                 
                 const activeLink = document.querySelector(`header nav a[href="#${id}"]`);
                 if (activeLink) {
-                    activeLink.classList.add('text-laranja', 'underline');
+                    activeLink.classList.add('text-amarelopan');
                 }
             }
         });
