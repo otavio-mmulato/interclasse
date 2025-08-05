@@ -97,33 +97,34 @@ if (form) {
         priceContainer.classList.add('hidden');
     });
 }
-/*Scrollspy */
+/* Scrollspy */
 const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('header nav a.nav-link');
+const navLinks = document.querySelectorAll('header nav a.nav-link');
 
-    const observerOptions = {
-        root: null, 
-        rootMargin: '-25% 0px -75% 0px', 
-        threshold: 0
-    };
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('text-amarelopan');
-                });
-                
-                const activeLink = document.querySelector(`header nav a[href="#${id}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('text-amarelopan');
-                }
-            }
+        navLinks.forEach((link) => {
+          link.classList.remove('text-amarelopan');
         });
-    }, observerOptions);
 
-    sections.forEach(section => {
-        observer.observe(section);
+        const activeLink = document.querySelector(`header nav a[href="#${id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('text-amarelopan');
+        }
+      }
     });
+  },
+  {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Detecta quando a seção está no centro da tela
+    threshold: 0,
+  }
+);
+
+sections.forEach((section) => {
+  observer.observe(section);
+});

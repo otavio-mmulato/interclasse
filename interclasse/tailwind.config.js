@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         'jomhuria': ['Jomhuria', 'serif'],
+        'bebas-neue': ['Bebas Neue', 'sans-serif'],
+        'anton': ['Anton', 'sans-serif'],
+        'barlow-condensed-semibold': ['Barlow Condensed', 'sans-serif'],
+        'poppins-medium': ['Poppins', 'sans-serif']
       },
       colors: {
         'azul': '#0D3B66',
