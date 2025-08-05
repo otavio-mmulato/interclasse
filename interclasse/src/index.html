@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth"> 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,17 +22,15 @@
         <img src="img/logo.png" alt="Logo SENAI SP" class="h-10 w-auto">
       </a>
       <div class="flex items-center gap-x-4 md:gap-x-8 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-        <a href="#" class="text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors">Modalidades</a>
-        <a href="#" class="text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors">AAPM</a>
-        <a href="#" class="text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors">Inscrições</a>
+        <a href="#modalidades" class="nav-link text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors duration-300">Modalidades</a>
+        <a href="#aapm" class="nav-link text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors duration-300">AAPM</a>
+        <a href="#inscricoes" class="nav-link text-black font-semibold text-sm md:text-base hover:text-laranja transition-colors duration-300">Inscrições</a>
       </div>
     </nav>
     <div class="bg-laranja h-4 w-full"></div>
   </header>
-  <!-- ^___Fim do header-->
-
   <main class="flex-grow">
-    <section class="pt-12 px-4 text-center">
+    <section id="modalidades" class="pt-12 px-4 text-center scroll-mt-24">
         <h1 class="text-4xl md:text-5xl font-bold text-white"><span class="text-vermelho">INTERCLASSES</span> SENAI</h1>
         <p class="text-lg text-laranja font-semibold mt-2">12/08 a 16/08</p>
         
@@ -43,7 +41,6 @@
         </div>
         
         <h2 class="text-3xl md:text-4xl font-bold text-white mt-16 mb-8">Modalidades</h2>
-        <!--Cards das modalidades-->
 
         <div class="max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div data-modalidade="futsal" class="modalidade-card bg-creme rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
@@ -57,13 +54,12 @@
             </div>
         </div>
 
-        <div id="modalidade-descricao" class="hidden max-w-4xl mx-auto mt-8 bg-creme text-gray-800 p-6 rounded-lg shadow-lg text-left">
+        <div id="modalidade-descricao" class="hidden max-w-4xl mx-auto mt-8">
         </div>
     </section>
 
-    <section class="pb-12">
+    <section id="aapm" class="pb-12 scroll-mt-24">
         <h2 class="text-3xl md:text-4xl font-bold text-white text-center mt-16 mb-8">Razões para aderir a AAPM</h2>
-        <!--Carrossel AAPM-->
         <div class="swiper aapm-carousel relative w-full pb-8">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="img/inicial.png" class="w-full h-full object-contain" alt="Imagem inicial da AAPM"></div>
@@ -75,19 +71,118 @@
             <div class="swiper-slide"><img src="img/ping_pong.png" class="w-full h-full object-contain" alt="Mesa de Ping Pong"></div>
             <div class="swiper-slide"><img src="img/final.png" class="w-full h-full object-contain" alt="Imagem final da AAPM"></div>
           </div>
-
           <div class="swiper-button-next hidden md:block"></div>
           <div class="swiper-button-prev hidden md:block"></div>
-
           <div class="swiper-pagination"></div>
         </div>
     </section>
+
+    <section class="py-12 px-4 scroll-mt-24">
+        <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-8">Nossa Equipe</h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group relative bg-creme rounded-lg shadow-lg overflow-hidden">
+                <img src="img/ftmarceline.png" alt="Membro da equipe 1" class="w-full h-80 object-cover transition-all duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-75" />
+                <div class="absolute inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                    <p class="text-white text-center font-bold text-lg">Marceline | Chapa Ophidiana</p>
+                </div>
+            </div>
+            <div class="group relative bg-creme rounded-lg shadow-lg overflow-hidden">
+                <img src="img/ftmarceline.png" alt="Membro da equipe 2" class="w-full h-80 object-cover transition-all duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-75" />
+                <div class="absolute inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                    <p class="text-white text-center font-bold text-lg">Marceline | Chapa Ophidiana</p>
+                </div>
+            </div>
+            <div class="group relative bg-creme rounded-lg shadow-lg overflow-hidden">
+                <img src="img/ftmarceline.png" alt="Membro da equipe 3" class="w-full h-80 object-cover transition-all duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-75" />
+                <div class="absolute inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                    <p class="text-white text-center font-bold text-lg">Marceline | Chapa Ophidiana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscricoes" class="py-16 px-4 scroll-mt-24">
+      <div class="max-w-lg mx-auto bg-gray-200 rounded-xl shadow-2xl p-6 md:p-8">
+        <form id="inscricao-form">
+          <div class="flex justify-between items-baseline mb-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Inscreva-se</h2>
+            <p class="text-xs text-gray-600">Período: 12/08 a 16/08</p>
+          </div>
+          <div class="mb-4">
+            <label for="nome" class="block text-gray-800 font-bold mb-1">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: Diana Mulato" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-laranja" required>
+          </div>
+          <div class="mb-4">
+            <label for="turma" class="block text-gray-800 font-bold mb-1">Turma</label>
+            <input type="text" id="turma" name="turma" placeholder="Ex: CT-DEV 2A" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-laranja" required>
+          </div>
+          <div class="mb-4">
+            <label for="telefone" class="block text-gray-800 font-bold mb-1">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Ex: (11) 99999-9999" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-laranja" required>
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-800 font-bold mb-1">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Ex: diana@email.com" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-laranja" required>
+          </div>
+          <div class="mb-6">
+            <label for="modalidade" class="block text-gray-800 font-bold mb-1">Modalidade</label>
+            <select id="modalidade" name="modalidade" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-laranja bg-white" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="futsal">Futsal</option>
+              <option value="volei">Vôlei</option>
+              <option value="tenis-de-mesa">Tênis de Mesa</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <p class="block text-gray-800 font-bold mb-2">Possui um time?</p>
+            <div class="flex gap-4">
+              <div>
+                <input type="radio" id="time-sim" name="possui-time" value="sim" class="peer hidden">
+                <label for="time-sim" class="px-4 py-2 block cursor-pointer rounded-lg border border-gray-400 peer-checked:bg-vermelho peer-checked:text-white peer-checked:border-vermelho">Sim</label>
+              </div>
+              <div>
+                <input type="radio" id="time-nao" name="possui-time" value="nao" class="peer hidden" checked>
+                <label for="time-nao" class="px-4 py-2 block cursor-pointer rounded-lg border border-gray-400 peer-checked:bg-vermelho peer-checked:text-white peer-checked:border-vermelho">Não</label>
+              </div>
+            </div>
+            <div id="team-name-container" class="hidden mt-3">
+              <label for="team-name" class="block text-gray-800 font-bold mb-1">Nome do Time</label>
+              <input type="text" id="team-name" name="team-name" placeholder="Ex: Ophidiana" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-laranja">
+            </div>
+          </div>
+          <div class="mb-6">
+            <p class="block text-gray-800 font-bold mb-2">É sócio da AAPM?</p>
+            <div class="flex gap-4">
+               <div>
+                <input type="radio" id="socio-sim" name="socio-aapm" value="sim" class="peer hidden" checked>
+                <label for="socio-sim" class="px-4 py-2 block cursor-pointer rounded-lg border border-gray-400 peer-checked:bg-vermelho peer-checked:text-white peer-checked:border-vermelho">Sim</label>
+              </div>
+              <div>
+                <input type="radio" id="socio-nao" name="socio-aapm" value="nao" class="peer hidden">
+                <label for="socio-nao" class="px-4 py-2 block cursor-pointer rounded-lg border border-gray-400 peer-checked:bg-vermelho peer-checked:text-white peer-checked:border-vermelho">Não</label>
+              </div>
+            </div>
+             <div id="price-container" class="hidden mt-3">
+                <p class="text-xl font-bold text-gray-800 bg-laranja/50 p-3 rounded-lg text-center">Taxa de Inscrição: R$25,00</p>
+            </div>
+          </div>
+          <button type="submit" class="w-full bg-verde text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105">
+            Inscrever-me
+          </button>
+        </form>
+      </div>
+      <div class="mt-8 mb-16 text-center">
+        <a href="#" target="_blank" class="inline-block bg-verde text-white font-bold py-3 px-12 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105">
+            Regulamento
+        </a>
+      </div>
+    </section>
   </main>
-  <!--Footer-->
+
   <footer class="bg-amarelo text-gray-800 border-t-8 border-azul">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center text-center p-6">
       <div class="flex justify-center">
-        <img src="img/logo.png" alt="Logo SENAI SP" class="h-12">
+        <a href="https://sp.senai.br/unidade/sorocaba/" target="_blank"><img src="img/logo.png" alt="Logo SENAI SP" class="h-12"></a>
       </div>
       <div class="flex flex-col items-center gap-y-4">
         <div class="flex gap-x-6">
@@ -100,7 +195,7 @@
         <a href="https://github.com/otavio-mmulato" target="_blank"><img src="img/ophidiana.png" alt="Selo de Segurança Ophidiana" class="h-10 mt-2"></a>
       </div>
       <div class="flex justify-center">
-        <img src="img/aapm.png" alt="Logo AAPM" class="h-16">
+        <a href="https://aapmsenaisorocaba.com.br/" target="_blank"><img src="img/aapm.png" alt="Logo AAPM" class="h-16"></a>
       </div>
     </div>
   </footer>
