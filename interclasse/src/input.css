@@ -2,3 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.aapm-carousel {
+  /* Setas*/
+  --swiper-navigation-color: #FAF0CA; 
+  --swiper-navigation-size: 30px;
+}
+
+/*Estilo das bolinhas de paginação*/
+.aapm-carousel .swiper-pagination-bullet {
+  background-color: #FAF0CA; 
+  opacity: 0.6;
+}
+
+.aapm-carousel .swiper-pagination-bullet-active {
+  background-color: #EE964B;
+  opacity: 1;
+}
