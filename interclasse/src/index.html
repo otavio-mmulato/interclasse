@@ -14,7 +14,6 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
-    
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js" defer></script>
 </head>
@@ -37,8 +36,15 @@
 
   <main class="flex-grow">
     <section id="modalidades" class="pt-12 px-4 text-center scroll-mt-24">
-        <h1 class="font-anton text-8xl md:text-8xl font-bold text-white"><span class="text-vermelho">INTERCLASSES SENAI Gaspar Ricardo Jr.</span> 2025</h1>
-        <p class="text-lg text-laranja font-semibold mt-2 font-anton">12/08 a 16/08</p>
+        
+        <div class="inline-flex flex-col items-center">
+            <h1 class="font-anton text-7xl md:text-8xl font-bold text-creme  tracking-wider text-center leading-none">
+                INTERCLASSES SENAI GASPAR <br> RICARDO JR. 2025
+            </h1>
+            <p class="font-anton text-4xl md:text-5xl font-bold text-vermelhosenai mt-8 animate-levitate tracking-widest">
+                12/08 a 16/08
+            </p>
+        </div>
         
         <div class="max-w-4xl mx-auto font">
             <p class="text-white mt-6 leading-relaxed text-justify font-poppins-medium">
@@ -46,7 +52,7 @@
             </p>
         </div>
         
-        <h2 class="font-anton text-8xl md:text-8xl font-bold text-creme mt-16 mb-8">Modalidades</h2>
+        <h2 class="font-anton text-8xl md:text-8xl font-bold text-creme mt-16 mb-16">Modalidades</h2>
 
         <div class="max-w-5xl mx-auto mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div data-modalidade="futsal" class="modalidade-card bg-creme rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
@@ -65,7 +71,7 @@
     </section>
 
     <section id="aapm" class="pb-12 scroll-mt-24">
-        <h2 class="font-anton text-8xl md:text-8xl font-bold text-creme text-center mt-16 mb-8">Razões para aderir a AAPM</h2>
+        <h2 class="font-anton text-8xl md:text-8xl font-bold text-creme text-center mt-16 mb-16">Razões para aderir a AAPM</h2>
         <div class="swiper aapm-carousel relative w-full pb-8">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="img/inicial.png" class="w-full h-full object-contain" alt="Imagem inicial da AAPM"></div>
@@ -85,7 +91,7 @@
     </section>
 
     <section class="py-12 px-4 scroll-mt-24">
-        <h2 class="font-anton text-8xl md:text-8xl font-bold text-creme text-center mb-8">Exemplos práticos</h2>
+        <h2 class="font-anton text-8xl md:text-8xl font-bold text-creme text-center mb-16">Exemplos práticos</h2>
         <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="group relative bg-creme rounded-lg shadow-lg overflow-hidden">
                 <img src="img/card1.jpg" alt="Membro da equipe 1" class="w-full h-80 object-cover transition-all duration-300 ease-in-out group-hover:blur-sm group-hover:brightness-75" />
@@ -178,7 +184,7 @@
           </button>
         </form>
       </div>
-      <div class="mt-8 mb-16 text-center">
+      <div class="mt-8 mb-8 text-center">
         <a href="#" target="_blank" class="inline-block bg-verde text-white font-bold py-3 px-12 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105">
             Regulamento
         </a>
