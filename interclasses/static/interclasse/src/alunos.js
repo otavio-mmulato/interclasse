@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let isEditing = false;
     let editingId = null;
 
-    // Função para carregar as modalidades e popular o select
     async function loadModalidades() {
         try {
             const response = await fetch(apiUrlModalidades);
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para carregar os alunos
     async function loadAlunos() {
         try {
             const response = await fetch(apiUrlAlunos);
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para renderizar a tabela de alunos
     function renderTable(alunos) {
         tbody.innerHTML = '';
         alunos.forEach(aluno => {
@@ -76,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função para criar ou atualizar aluno
+
     async function handleFormSubmit(event) {
         event.preventDefault();
         
-        // Garante que o campo de modalidade tenha um valor numérico
+
         const modalidadeValue = parseInt(modalidadeAlunoSelect.value);
         if (isNaN(modalidadeValue)) {
             alert('Por favor, selecione uma modalidade.');
@@ -92,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             turma: turmaAlunoInput.value,
             telefone: telefoneAlunoInput.value,
             email: emailAlunoInput.value,
-            modalidade_id: modalidadeValue, // CORRIGIDO: Usando 'modalidade_id'
+            modalidade_id: modalidadeValue, 
             socio: socioAlunoCheckbox.checked,
             faz_parte_do_time: fazParteDoTimeCheckbox.checked,
             nome_do_time: nomeDoTimeInput.value || null,
@@ -141,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para excluir aluno
     async function deleteAluno(id) {
         if (!confirm('Tem certeza que deseja excluir este aluno?')) return;
 
@@ -159,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Lógica para alternar a visibilidade do campo "nome do time"
     fazParteDoTimeCheckbox.addEventListener('change', () => {
         if (fazParteDoTimeCheckbox.checked) {
             nomeDoTimeInput.classList.remove('hidden');
@@ -169,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener para os botões de editar e excluir
     tbody.addEventListener('click', (event) => {
         const target = event.target.closest('button');
         if (!target) return;
@@ -219,10 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener para o formulário
     alunoForm.addEventListener('submit', handleFormSubmit);
 
-    // Carrega os dados ao iniciar a página
     loadModalidades();
     loadAlunos();
 });

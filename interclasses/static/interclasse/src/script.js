@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const priceContainer = document.getElementById('price-container');
 
     const modalidadesMap = {
-        'futsal': 1,
-        'volei': 2,
-        'tenis-de-mesa': 3
+        'futsal': 4, //1
+        'volei': 3, //2
+        'tenis-de-mesa': 5//3
     };
 
     async function handleFormSubmit(event) {
