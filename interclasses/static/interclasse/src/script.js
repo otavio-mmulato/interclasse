@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // URL da sua API para o cadastro de alunos.
-    // O endpoint foi ajustado para 'api/alunos/' conforme o console do seu navegador.
     const apiUrl = 'http://localhost:8000/api/alunos/';
 
-    // Referências aos elementos do formulário e UI
     const inscricaoForm = document.getElementById('inscricao-form');
     const possuiTimeRadios = document.querySelectorAll('input[name="possui-time"]');
     const teamNameContainer = document.getElementById('team-name-container');
@@ -12,18 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const socioAapmRadios = document.querySelectorAll('input[name="socio-aapm"]');
     const priceContainer = document.getElementById('price-container');
 
-    // Mapeamento dos IDs de modalidades fornecidos por você na imagem da lista de modalidades
     const modalidadesMap = {
         'futsal': 1,
         'volei': 2,
         'tenis-de-mesa': 3
     };
 
-    // Função para lidar com o envio do formulário para a API
     async function handleFormSubmit(event) {
         event.preventDefault();
 
-        // 1. Coletar os dados do formulário
         const nome = document.getElementById('nome').value;
         const turma = document.getElementById('turma').value;
         const telefone = document.getElementById('telefone').value;
@@ -33,13 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const nomeDoTime = possuiTime ? teamNameInput.value : null;
         const socioAapm = document.querySelector('input[name="socio-aapm"]:checked').value === 'sim';
         
-        // Validação básica para o nome do time
         if (possuiTime && !nomeDoTime) {
             alert('Por favor, insira o nome do seu time.');
             return;
         }
 
-        // 2. Preparar os dados para a API no formato JSON
         const inscricaoData = {
             nome: nome,
             turma: turma,
@@ -51,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
             socio: socioAapm,
         };
 
-        // 3. Enviar os dados para a API usando fetch
         try {
             const response = await fetch(apiUrl, {
                 method: 'POST',
@@ -88,9 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // --- LÓGICA DE UI ---
-
-    // Descrições para os cards de modalidade
     const descricoes = {
         futsal: `
             <div class="bg-creme text-gray-800 p-6 rounded-lg shadow-lg">
@@ -122,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Swiper Carousel
     const swiper = new Swiper('.aapm-carousel', {
         effect: 'fade',
         loop: true,
@@ -141,7 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // Lógica para mostrar/esconder o campo de nome do time
     possuiTimeRadios.forEach(radio => {
         radio.addEventListener('change', () => {
             if (radio.value === 'sim') {
@@ -153,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Lógica para mostrar/esconder a taxa de inscrição
     socioAapmRadios.forEach(radio => {
         radio.addEventListener('change', () => {
             if (radio.value === 'nao') {
@@ -164,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- SCROLLSPY ---
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('header nav a.nav-link');
 
@@ -193,8 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // --- EVENT LISTENER PRINCIPAL ---
-    // Atribui o event listener de envio do formulário à nossa função que envia para a API
     inscricaoForm.addEventListener('submit', handleFormSubmit);
 
 });

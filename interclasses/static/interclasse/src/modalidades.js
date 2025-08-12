@@ -4,11 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submit-modalidade-btn');
     const tbody = document.getElementById('modalidades-table-body');
 
-    // Estado para controlar a edição
     let isEditing = false;
     let editingId = null;
 
-    // Função para carregar as modalidades
     async function loadModalidades() {
         try {
             const response = await fetch(apiUrl);
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para renderizar a tabela
     function renderTable(modalidades) {
         tbody.innerHTML = '';
         modalidades.forEach(modalidade => {
@@ -42,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Função para adicionar nova modalidade
     async function addModalidade(event) {
         event.preventDefault();
         const nome = nomeModalidadeInput.value;
@@ -69,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para excluir modalidade
     async function deleteModalidade(id) {
         if (!confirm('Tem certeza que deseja excluir esta modalidade?')) return;
 
@@ -88,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para editar modalidade (PUT)
     async function updateModalidade(id, novoNome) {
         try {
             const response = await fetch(`${apiUrl}${id}/`, {
@@ -104,20 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error(errorData.nome[0] || 'Erro ao atualizar modalidade');
             }
 
-            // Restaura o estado para cadastro
             isEditing = false;
             editingId = null;
             submitBtn.textContent = 'Cadastrar';
             nomeModalidadeInput.value = '';
             
-            loadModalidades(); // Recarrega a tabela para exibir a mudança
+            loadModalidades(); 
         } catch (error) {
             console.error('Erro ao atualizar modalidade:', error);
             alert(error.message);
         }
     }
 
-    // Lógica para alternar entre cadastro e edição
     submitBtn.addEventListener('click', (event) => {
         event.preventDefault();
         if (isEditing) {
@@ -130,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener para os botões de editar e excluir
     tbody.addEventListener('click', (event) => {
         const target = event.target.closest('button');
         if (!target) return;
@@ -141,15 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (target.classList.contains('delete-btn')) {
             deleteModalidade(id);
         } else if (target.classList.contains('edit-btn')) {
-            // Entra no modo de edição
             isEditing = true;
             editingId = id;
             
-            // Pega o nome da modalidade da linha clicada
             const nomeCell = row.querySelector('td:nth-child(2)');
             const nomeAtual = nomeCell.textContent;
 
-            // Preenche o campo de input e muda o texto do botão
             nomeModalidadeInput.value = nomeAtual;
             submitBtn.textContent = 'Salvar Alteração';
             nomeModalidadeInput.focus();
